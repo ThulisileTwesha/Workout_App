@@ -6,7 +6,7 @@ export default function CustomPage({navigation}){
         <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
         <Text
         onPress={() => navigation.navigate('Home')}
-            style={{fontsize:26, fontWeight: bold}}>Custom</Text>
+            style={{fontsize:26}}>Custom</Text>
       
         
       </View>
