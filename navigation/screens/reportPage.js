@@ -6,7 +6,7 @@ export default function TrainingPage({navigation}){
         <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
         <Text
         onPress={() => navigation.navigate('Home')}
-            style={{fontsize:26,}}>Report</Text>
+            >Report</Text>
        
         
       </View>
