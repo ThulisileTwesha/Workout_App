@@ -1,46 +1,26 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView,Image } from 'react-native';
 import { StyleSheet } from 'react-native';
-//import WeeklyCalendar from 'react-native-weekly-calendar';
-import { DatePicker } from 'react-native-week-month-date-picker';
-import { addDays } from 'date-fns';
+import CalendarStrip from 'react-native-calendar-strip';
+
 
 
 export default function HomeScreen(){
-  const [selectedDate, setSelectedDate] = React.useState(new Date());
-   // const sampleEvents = [
-        //{ 'start': '2023-11-13 ', 'note': 'Full Body' },
-        //{ 'start': '2023-11-14 ',  'note': 'Abs and Cardio' },
-        //{ 'start': '2023-11-15 ',  'note': 'Leg Day' },
-       
-      //];
-
-   
     return(
-        <View StyleSheet = {StyleSheet.container}>
-        <Text style={styles.setFontSizeOne}>Welcome Back Thuli</Text>
+        <SafeAreaView StyleSheet = {StyleSheet.container}>
+          <View><Text style={styles.setFontSizeOne}>Welcome Back Thuli</Text></View>
+          <View>
+          <Text style={styles.setFontSizeOne}>Weekly Goal</Text>
+          <CalendarStrip
+         daySelectionAnimation={{type: 'border', duration: 200, borderWidth: 1, borderHighlightColor: 'black'}}
+      style={{height:100, paddingTop: 10, paddingBottom: 10}}/>
 
-        <SafeAreaView>
-      <DatePicker
-        startDate={new Date()}
-        maxFutureDays={90}
-        markedDates={[new Date(), addDays(new Date(), 2)]}
-        onDateChange={(date) => setSelectedDate(date)}
-        theme={{
-          primaryColor: 'purple',
-        }}
-      >
-        <View>
-          <Text>Timeslots</Text>
-          <Text>{selectedDate.toString()}</Text>
-        </View>
-      </DatePicker>
-    </SafeAreaView>
+          </View>
+          <View><Text style={styles.setFontSizeOne}>Let's get moving!</Text></View>  
     
-            
-       
-        
-      </View>
+    
+
+      </SafeAreaView>           
 
 
 
@@ -49,7 +29,7 @@ export default function HomeScreen(){
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: 'grey',
       alignItems: 'center',
       justifyContent: 'center',
 
