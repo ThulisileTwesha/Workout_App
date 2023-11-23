@@ -1,7 +1,10 @@
 import * as React from 'react';
-import { View, Text, SafeAreaView,Image } from 'react-native';
-import { StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
+import FullBodyImage from '../../navigation/fullbody.jpg';
 import CalendarStrip from 'react-native-calendar-strip';
+import { SafeAreaView } from 'react-native';
+import Abs from '../../navigation/Abse.jpg';
+
 
 
 
@@ -17,27 +20,37 @@ export default function HomeScreen(){
 
           </View>
           <View><Text style={styles.setFontSizeOne}>Let's get moving!</Text></View>  
-    
-    
+          <Image source={FullBodyImage} style={styles.imageStyle} />
+          <Text style={styles.setFontSizeOne}>Recommended</Text>
+          <Image source={Abs} style={styles.imageStyle} />
 
+
+          
+    
+    
+    
       </SafeAreaView>           
-
-
 
     );
 }
+
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: 'grey',
-      alignItems: 'center',
-      justifyContent: 'center',
-
-    },
-    setFontSizeOne: {
-        fontSize: 20,
-        padding: 10
-    }
-
-  });
+  container: {
+    flex: 1,
+    backgroundColor: 'grey',
+  },
+  setFontSizeOne: {
+    fontSize: 16,
+    margin:10,
+  },
+  imageStyle: {
+    width: 380,
+    height:200,
+    justifyContent:'center',
+    alignItems:'center',
+    margin:12,
+    
+  
+  },
+});
 
