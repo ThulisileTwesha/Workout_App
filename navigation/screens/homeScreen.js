@@ -22,7 +22,7 @@ export default function HomeScreen(){
           <View><Text style={styles.setFontSizeOne}>Let's get moving!</Text></View>  
           <Image source={FullBodyImage} style={styles.imageStyle} />
           <Text style={styles.setFontSizeOne}>Recommended</Text>
-          <Image source={Abs} style={styles.imageStyle} />
+          <Image source={Abs} style={styles.imageStyle}/>
 
 
           
