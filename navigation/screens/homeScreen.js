@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet,Button } from 'react-native';
 import FullBodyImage from '../../navigation/fullbody.jpg';
 import CalendarStrip from 'react-native-calendar-strip';
 import { SafeAreaView } from 'react-native';
@@ -19,8 +19,12 @@ export default function HomeScreen(){
       style={{height:100, paddingTop: 10, paddingBottom: 10}}/>
 
           </View>
-          <View><Text style={styles.setFontSizeOne}>Let's get moving!</Text></View>  
+          <View><Text style={styles.setFontSizeOne}>Let's get moving!</Text></View>
+          <View>
           <Image source={FullBodyImage} style={styles.imageStyle} />
+           
+            </View> 
+          
           <Text style={styles.setFontSizeOne}>Recommended</Text>
           <Image source={Abs} style={styles.imageStyle}/>
 
@@ -49,6 +53,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     margin:12,
+  
     
   
   },
