@@ -11,8 +11,15 @@ import FullBodyImage from "../../navigation/fullbody.jpg";
 import CalendarStrip from "react-native-calendar-strip";
 import { SafeAreaView } from "react-native";
 import Abs from "../../navigation/Abse.jpg";
+import fitness from "../data/fitness";
+import { useNavigation } from "@react-navigation/native";
+
 
 export default function HomeScreen() {
+  const FitnessData = fitness;
+  const navigation = useNavigation();
+ 
+ 
   return (
     <SafeAreaView StyleSheet={StyleSheet.container}>
       <View>
@@ -35,21 +42,28 @@ export default function HomeScreen() {
       </View>
       <ImageBackground source={FullBodyImage} style={styles.imageStyle}>
         <View>
-       
-      <Pressable style={styles.myButton}>
-        <Text style = {styles.text}>Start Workout</Text> 
-      </Pressable>
+
+        <Pressable 
+        onPress={() => navigation.navigate("Workout",{
+          image:item.image,
+          excersises:item.excersises,
+          id:item.id,
+        })}
+        
+        style={styles.myButton}
+         >
+    
+          <Text style={styles.text}>Start Workout</Text>
+        </Pressable>
         </View>
       </ImageBackground>
-      
+
       <Text style={styles.setFontSizeOne}>Recommended</Text>
       <ImageBackground source={Abs} style={styles.imageStyle}>
         <View>
-      <Pressable style={styles.myButton}>
-        <Text style = {styles.text}>Start Workout</Text>
-      
-           
-      </Pressable>
+          <Pressable style={styles.myButton}>
+            <Text style={styles.text}>Start Workout</Text>
+          </Pressable>
         </View>
       </ImageBackground>
     </SafeAreaView>
@@ -73,21 +87,19 @@ const styles = StyleSheet.create({
     margin: 12,
   },
   myButton: {
-    backgroundColor:'#841584',
-    width:130,
-    height:30,
-    justifyContent:'center',
-    alignItems:'center',
-    borderRadius:15,
-    position:'absolute',
-    right:50,
+    backgroundColor: "#841584",
+    width: 130,
+    height: 30,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 15,
+    position: "absolute",
+    right: 50,
     top: 50,
-
-
   },
-  text:{
-    fontSize:15,
-    color:'white',
-    fontWeight:'bold',
-  }
+  text: {
+    fontSize: 15,
+    color: "white",
+    fontWeight: "bold",
+  },
 });
