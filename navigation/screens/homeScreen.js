@@ -2,7 +2,7 @@ import * as React from "react";
 import {
   View,
   Text,
-  Image,
+  Pressable,
   StyleSheet,
   Button,
   ImageBackground,
@@ -35,23 +35,21 @@ export default function HomeScreen() {
       </View>
       <ImageBackground source={FullBodyImage} style={styles.imageStyle}>
         <View>
-          <Button
-            style={styles.myButton}
-            title="Start Workout"
-            color="#841584"
-            
-          />
+       
+      <Pressable style={styles.myButton}>
+        <Text style = {styles.text}>Start Workout</Text> 
+      </Pressable>
         </View>
       </ImageBackground>
-
+      
       <Text style={styles.setFontSizeOne}>Recommended</Text>
       <ImageBackground source={Abs} style={styles.imageStyle}>
         <View>
-          <Button
-            style={styles.myButton}
-            title="Start Workout"
-            color="#841584"
-          />
+      <Pressable style={styles.myButton}>
+        <Text style = {styles.text}>Start Workout</Text>
+      
+           
+      </Pressable>
         </View>
       </ImageBackground>
     </SafeAreaView>
@@ -75,6 +73,21 @@ const styles = StyleSheet.create({
     margin: 12,
   },
   myButton: {
+    backgroundColor:'#841584',
+    width:130,
+    height:30,
+    justifyContent:'center',
+    alignItems:'center',
+    borderRadius:15,
+    position:'absolute',
+    right:50,
+    top: 50,
+
 
   },
+  text:{
+    fontSize:15,
+    color:'white',
+    fontWeight:'bold',
+  }
 });
