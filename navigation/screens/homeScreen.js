@@ -4,22 +4,14 @@ import {
   Text,
   Pressable,
   StyleSheet,
-  Button,
   ImageBackground,
 } from "react-native";
 import FullBodyImage from "../../navigation/fullbody.jpg";
 import CalendarStrip from "react-native-calendar-strip";
 import { SafeAreaView } from "react-native";
 import Abs from "../../navigation/Abse.jpg";
-import fitness from "../data/fitness";
-import { useNavigation } from "@react-navigation/native";
-
 
 export default function HomeScreen() {
-  const FitnessData = fitness;
-  const navigation = useNavigation();
- 
- 
   return (
     <SafeAreaView StyleSheet={StyleSheet.container}>
       <View>
@@ -42,19 +34,9 @@ export default function HomeScreen() {
       </View>
       <ImageBackground source={FullBodyImage} style={styles.imageStyle}>
         <View>
-
-        <Pressable 
-        onPress={() => navigation.navigate("Workout",{
-          image:item.image,
-          excersises:item.excersises,
-          id:item.id,
-        })}
-        
-        style={styles.myButton}
-         >
-    
-          <Text style={styles.text}>Start Workout</Text>
-        </Pressable>
+          <Pressable style={styles.myButton}>
+            <Text style={styles.text}>Start Workout</Text>
+          </Pressable>
         </View>
       </ImageBackground>
 

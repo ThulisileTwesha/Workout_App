@@ -1,14 +1,22 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { SafeAreaView } from "react-native";
 
-export default function TrainingPage({navigation}){
+export default function UserPage(){
     return(
-        <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
-        <Text
-        onPress={() => navigation.navigate('Home')}
-          >User</Text>
-       
-        
-      </View>
+        <SafeAreaView  StyleSheet={StyleSheet.container}>
+          <View>
+          <Text>User</Text>
+
+
+          </View>
+      </SafeAreaView>
     );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "grey",
+  }
+  });
